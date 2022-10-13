@@ -1,7 +1,33 @@
 .App {
   text-align: center;
 }
-
+.bigOne{
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
+input{
+  margin-top: 10px;
+  width: 400px;
+  height: 40px;
+  font-size: 30px;
+  outline: none;
+}
+button{
+  height: 45px;
+  font-size: 30px;
+  margin-top: 10px;
+}
+#new{
+  display: none;
+}
+.inputinTime{
+  display: flex;
+  flex-direction: column;
+}
+.rowinTime{
+  display: flex;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
