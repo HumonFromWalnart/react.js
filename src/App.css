@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
-.bigOne{
+.outlineContainer{
   height: 500px;
   display: flex;
   justify-content: center;
@@ -13,19 +13,36 @@ input{
   font-size: 30px;
   outline: none;
 }
+#mettaton-status{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 button{
   height: 45px;
   font-size: 30px;
   margin-top: 10px;
 }
-#new{
-  display: none;
+#your-box{
+  margin-top: 12px;
+  width: 1000px;
+  height: 200px;
+  border: 5px solid white;
 }
-.inputinTime{
+#negative{
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+#task-container{
+  display: flex;
+  max-width: 477px;
+}
+.toDoList{
   display: flex;
   flex-direction: column;
 }
-.rowinTime{
+.searchField{
   display: flex;
 }
 .App-logo {
@@ -35,12 +52,12 @@ button{
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 0.5s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -54,11 +71,14 @@ button{
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* @keyframes App-logo-spin {
+  0% {
+    transform: translateY(0px);
   }
-  to {
-    transform: rotate(360deg);
+  50%{
+    transform: translateY(-5px);
   }
-}
+  100% {
+    transform: translateY(0px);
+  }
+} */
