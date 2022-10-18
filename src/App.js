@@ -3,6 +3,7 @@
 import jesus from './jesus-ballin.gif'
 import mettaton from './Mettaton_NEO.gif'
 import './App.css';
+import { useRef } from 'react';
 import { useState } from 'react';
 // import { createElement } from 'react';
 
@@ -10,15 +11,46 @@ import { useState } from 'react';
 const App = () => {
   const [list, setList] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const lol = useRef();
+  // 2 type of data
+
+  // 1. normal data
+  // 2. DOM Element
+
+  // const alertValue = document.getElementById("inputinTime") => DOM element
+
+  console.log('hi')
+
+  const FocusinTime = (lol) => {
+      if(lol.current == ''){
+        console.log("nothing")
+      }else{
+        console.log("lol")
+      }
+  }
+
+  // function showAlert(lol) {
+  //   if (lol.current.value == '') {
+  //     alert("Nothing but here's text")
+  //   } else {
+  //     alert(lol.value);
+  //   }
+  // }
+
+  // const arr = [1, 2, 3, 4];
+
+  // console.log([arr]) => [[1, 2, 3, 4]]
+  // [...arr] => [1, 2, 3, 4]
 
   return (
     <div className="App">
+      {/* {count} */}
       <header className="App-header">
         <img src={mettaton} className="App-logo" alt="logo" />
-        <div id='your-box'>   
-        <p id='mettaton-status'>
-          Mettaton Neo has 90ATK and 9DEF 
-        </p>
+        <div id='your-box'>
+          <p id='mettaton-status'>
+            Mettaton Neo has 90ATK and 9DEF
+          </p>
           <a
             className="App-link"
             href="https://www.youtube.com/watch?v=axZ1r_duW0w"
@@ -39,6 +71,11 @@ const App = () => {
             <div id='new'>
               {list.map((doIt, index) => <Text value={doIt} index={index} list={list} setList={setList} />)}
               {/* {list.map((cur) => <div>{cur}</div>)} */}
+            </div>
+            <div id='container-second'> {/* lol */}
+              <h2 className='signUp'>Sign Up</h2>
+              <input id='inputinTime' type={'text'} ref={lol} placeholder='HOwdey' ></input>
+              <button id='buttoninTime' type='submit' onClick={FocusinTime}>FOCUS IT</button>
             </div>
           </div>
         </div>
