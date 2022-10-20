@@ -19,10 +19,7 @@ const Home = () => {
     function Monsoon() {
         // <video src={video} type="video/mp4" controls  />
         //  <img src={mettaton}></img>
-        console.log('before', hook.current.innerHTML)
-        hook.current.innerHTML = "lol"
-        console.log('after', hook.current.innerHTML)
-        
+        console.log('before', hook.current.style)
     }
 
 
@@ -33,7 +30,7 @@ const Home = () => {
                 <SpamBOI onClick={Monsoon} />
             </div>
             <div id='lol' ref={hook}>
-                {hook.current.innerHTML} 
+            <img src={require('//Users/Walmart.Inc/Desktop/walmartin-time/src/Mettaton_NEO.gif')} onClick={() => Monsoon()} alt='neo' style={{display: 'none'}} ></img>
             </div>
         </div>
     );
