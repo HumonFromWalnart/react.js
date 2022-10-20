@@ -1,0 +1,76 @@
+body {
+  background-image: url(Undertale-Together.png);
+  background-size: 1920px 1000px;
+  margin: 0%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 100px;
+  width: 2000px;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container {
+  height: 1000px;
+  border: 3px solid white;
+}
+
+.link-decoration {
+  text-decoration: none;
+  color: blue;
+  font-size: 30px;
+}
+
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#ruins {
+  color: #b962b9;
+}
+
+#snowdin {
+  color: #85a3d8;
+}
+
+#waterfall {
+  color: #05edfb;
+}
+
+#hotland {
+  color: #fa1100;
+}
+
+#core {
+  color: #142063;
+}
+
+#newHome {
+  color: #ad6bb1;
+}
+
+
+#ruins {
+  color: purple;
+}
+
+.seniorContainer {
+  display: flex;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchInput {
+  outline: none;
+  width: 800px;
+  height: 60px;
+  font-size: 35px;
+  border: none;
+  box-shadow: 0 0 50px #05c3e2;
+}
