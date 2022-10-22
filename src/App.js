@@ -1,151 +1,90 @@
 
-
 // import jesus from './jesus-ballin.gif'
 // import mettaton from './Mettaton_NEO.gif'
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-// import { useRef } from 'react';
-// import { useState } from 'react';
-import Lol from './event';
-import Home from './home';
-// import { createElement } from 'react';
-
+import Ruins from './ruins';
+import Snowdin from './snowdin';
+import Waterfall from './waterfall';
+import Hotland from './hotland';
+import Core from './core';
+import NewHome from './newHome';
+import hotlandBackground from './hotland.png'
+import ruinsBackground from './ruins.png'
+import snowdinBackground from './snowdin.png'
+import waterfallBackground from './waterfall.png'
+import coreBackground from './core.jpg'
+import newHomeBackground from './newHome.png'
 
 const App = () => {
-  //   const [list, setList] = useState([]);
-  //   const [inputValue, setInputValue] = useState('');
-  //   const lol = useRef();
-  // 2 type of data
 
-  // 1. normal data
-  // 2. DOM Element
+  const hotland = () => {
+    document.body.style.backgroundImage = `url(${hotlandBackground})`
+    console.log("checking if background function is working")
+  }
 
-  // const alertValue = document.getElementById("inputinTime") => DOM element
+  const ruins = () => {
+    document.body.style.backgroundImage = `url(${ruinsBackground})`
+    console.log("checking if background function is working")
+  }
 
-  // function FocusinTime ({inputValue, lol}){
-  //  const search = inputValue.toLowerCase.filter((lol) => lol == inputValue);
-  //  setInputValue(search);
-  // }
-  // if(lol.current == ''){
-  //   console.log("nothing")
-  // }else{
-  //   console.log("lol")
-  // }
-  // }
+  const snowdin = () => {
+    document.body.style.backgroundImage = `url(${snowdinBackground})`
+    console.log("checking if background function is working")
+  }
 
-  // function showAlert(lol) {
-  //   if (lol.current.value == '') {
-  //     alert("Nothing but here's text")
-  //   } else {
-  //     alert(lol.value);
-  //   }
-  // }
+  const waterfall = () => {
+    document.body.style.backgroundImage = `url(${waterfallBackground})`
+    console.log("checking if background function is working")
+  }
+  const core = () => {
+    document.body.style.backgroundImage = `url(${coreBackground})`
+    console.log("checking if background function is working")
+  }
 
-  // const arr = [1, 2, 3, 4];
-
-  // console.log([arr]) => [[1, 2, 3, 4]]
-  // [...arr] => [1, 2, 3, 4]
+  const newHome = () => {
+    document.body.style.backgroundImage = `url(${newHomeBackground})`
+    console.log("checking if background function is working")
+  }
 
   return (
     <BrowserRouter>
-      <div className="Container">
-        <Link to={'/home'} id='link-decoration'>Home </Link>
-        <Link to={'/event'} id='link-decoration' >Event</Link>
-        <Routes>
-          <Route path='/home' element={<Home />} />
-          <Route path='/event' element={<Lol />} />
-        </Routes>
-        {/* <header className="App-header">
-        <img src={mettaton} className="App-logo" alt="logo" />
-        <div id='your-box'>
-          <p id='mettaton-status'>
-            Mettaton Neo has 90ATK and 9DEF
-          </p>
-          <a
-            className="App-link"
-            href="https://www.youtube.com/watch?v=axZ1r_duW0w"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Teleport To Battle
-          </a></div>
-
-      </header> 
-      <div className='outlineContainer'>
-        <div id='container'>
-          <div className='toDoList'>
-            <div className='searchField'>
-              <input id='input' value={inputValue} placeholder='Add Something Useless' onChange={(e) => setInputValue(e.target.value)}></input>
-              <Button id="button" onClick={() => { setList([...list, inputValue]); setInputValue('') }} value="Add It" />
-            </div>
-            <div id='new'>
-              {list.map((doIt, index) => <Text value={doIt} index={index} list={list} setList={setList} />)} */}
-        {/* {list.map((cur) => <div>{cur}</div>)} */}
-        {/* </div> */}
-        {/* <div id='container-second'> lol */}
-        {/* <h2 className='signUp'>Sign Up</h2>
-              <input id='inputinTime' type={'text'} ref={lol} placeholder='HOwdey' ></input>
-              <button id='buttoninTime' type='submit' onClick={FocusinTime}>FOCUS IT</button>
-            </div>
-          </div>
+      <div className='container'>
+        <header>
+          <Link to={'/ruins'} className='link-decoration' id='ruins' onClick={ruins}>Ruins</Link>
+          <Link to={'/snowdin'} className='link-decoration' id='snowdin' onClick={snowdin} >Snowdin</Link>
+          <Link to={'/waterfall'} className='link-decoration' id='waterfall' onClick={waterfall}>Waterfall</Link>
+          <Link to={'hotland'} className='link-decoration' id='hotland' onClick={hotland} >Hotland</Link>
+          <Link to={'/core'} className='link-decoration' id='core' onClick={core}>Core</Link>
+          <Link to={'/newhome'} className='link-decoration' id='newHome' onClick={newHome} >NewHome</Link>
+          <Routes>
+            <Route path='/ruins' element={<Ruins />} />
+            <Route path='/snowdin' element={<Snowdin />} />
+            <Route path='/waterfall' element={<Waterfall />} />
+            <Route path='/hotland' element={<Hotland />} />
+            <Route path='/core' element={<Core />} />
+            <Route path='/newhome' element={<NewHome />} />
+          </Routes>
+        </header>
+        <div className='seniorContainer'>
+          <Input />
         </div>
-      </div> */}
-      </div>
-    </BrowserRouter>
 
+      </div>
+
+    </BrowserRouter>
   );
+
 }
 
-// function Text({ value, index, list, setList }) {
-//   const deleteIT = () => {
-//     const newList = list.filter((cur) => cur !== value);
-//     setList(newList);
-//   }
-
-//   return (
-//     <div id='task-container'>
-//       <p>{`${index + 1} > ${value}`}</p>
-//       <Negative onClick={deleteIT}></Negative>
-//     </div>
-//   )
-// }
-
-// const Button = (props) => {
-//   return (
-//     <button id="button" onClick={props.onClick} >Add</button>
-//   );
-// }
-
-// const Negative = (negative) => {
-//   return (
-//     <button id="negative" onClick={negative.onClick} >Delete</button>
-//   );
-// }
+const Input = () => {
+  return (
+    <input id='searchInput' type={'text'} placeholder='Search' ></input>
+  )
+}
 
 export default App;
 
 
 
-// const getValue = () => {
-//   const inputValue2 = document.getElementById("input").value;
-//   add(inputValue2);
-// }
-// document.addEventListener("keydown", (element) => {
-//   if (element.key == "Enter") {
-//     const inputValue = document.getElementById("input").value;
-//     add(inputValue);
-//   }
-// });
-
-// let counter = 0;
-
-// const add = (value) => {
-//   counter += 1;
-//   const newElement = document.createElement("div");
-//   newElement.innerHTML = `${counter}. ${value} `;
-//   newElement.style = "margin-top: 10px; height: 30px; font-size: 25px; border: 1px solid rgb(77, 30, 30); border-radius: 15px; display: flex; align-items: center; margin-bottom:30px"
-//   console.log(counter)
-//   document.getElementById('new').appendChild(newElement);
-//   document.getElementById('new').style.display = "block"
-// }

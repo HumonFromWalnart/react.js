@@ -1,92 +1,73 @@
-.App {
-  text-align: center;
-}
-.outlineContainer{
-  height: 500px;
-  display: flex;
-  justify-content: center;
-}
-input{
-  margin-top: 10px;
-  width: 400px;
-  height: 40px;
-  font-size: 30px;
-  outline: none;
-}
-#mettaton-status{
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-button{
-  height: 45px;
-  font-size: 30px;
-  margin-top: 10px;
-}
-#your-box{
-  margin-top: 12px;
-  width: 1000px;
-  height: 200px;
-  border: 5px solid white;
-}
-#negative{
-  width: 60px;
-  height: 30px;
-  font-size: 15px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-}
-#task-container{
-  display: flex;
-  max-width: 477px;
-}
-.toDoList{
+body {
+  background-image: url(Undertale-Together.png);
+  background-size: 1920px 1000px;
+  margin: 0%;
   display: flex;
   flex-direction: column;
 }
-.searchField{
-  display: flex;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 0.5s linear;
-  }
-}
-
-.App-header {
-  background-color: black;
-  min-height: 100vh;
+header {
+  height: 100px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  height: 1000px;
 }
 
-#link-decoration{
+.link-decoration {
   text-decoration: none;
-  color: black;
+  color: blue;
+  font-size: 30px;
 }
 
-.container{
-
+* {
+  font-family: 'Courier New', Courier, monospace;
 }
-/* @keyframes App-logo-spin {
-  0% {
-    transform: translateY(0px);
-  }
-  50%{
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-} */
+
+#ruins {
+  color: #b962b9;
+}
+
+#snowdin {
+  color: #85a3d8;
+}
+
+#waterfall {
+  color: #05edfb;
+}
+
+#hotland {
+  color: #fa1100;
+}
+
+#core {
+  color: #142063;
+}
+
+#newHome {
+  color: #ad6bb1;
+}
+
+
+#ruins {
+  color: purple;
+}
+
+.seniorContainer {
+  display: flex;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchInput {
+  outline: none;
+  width: 800px;
+  height: 60px;
+  font-size: 35px;
+  border: none;
+  box-shadow: 0 0 50px #05c3e2;
+}
