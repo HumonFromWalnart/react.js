@@ -2,22 +2,24 @@
 // import jesus from './jesus-ballin.gif'
 // import mettaton from './Mettaton_NEO.gif'
 import './App.css';
-import React from 'react';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { BrowserRouter, Link, Route, Routes, } from 'react-router-dom';
 import Ruins from './ruins';
 import Snowdin from './snowdin';
 import Waterfall from './waterfall';
 import Hotland from './hotland';
 import Core from './core';
 import NewHome from './newHome';
-import hotlandBackground from './hotland.png'
+import hotlandBackground from './hotland.png';
 import ruinsBackground from './ruins.png'
 import snowdinBackground from './snowdin.png'
 import waterfallBackground from './waterfall.png'
 import coreBackground from './core.jpg'
-import newHomeBackground from './newHome.png'
+import newHomeBackground from './judgementHall.jpg'
 
 const App = () => {
+
+  const searchInput = useRef();
 
   const hotland = () => {
     document.body.style.backgroundImage = `url(${hotlandBackground})`
@@ -26,6 +28,7 @@ const App = () => {
 
   const ruins = () => {
     document.body.style.backgroundImage = `url(${ruinsBackground})`
+    searchInput.current.style.display = 'none'
     console.log("checking if background function is working")
   }
 
@@ -49,10 +52,11 @@ const App = () => {
   }
 
   return (
-    <BrowserRouter>
+    < BrowserRouter >
       <div className='container'>
         <header>
-          <Link to={'/ruins'} className='link-decoration' id='ruins' onClick={ruins}>Ruins</Link>
+          <div id='title'>Undertale HUB</div>
+          <Link to={'/ruins'} className='link-decoration' id='ruins' onClick={ruins} > Ruins</Link>
           <Link to={'/snowdin'} className='link-decoration' id='snowdin' onClick={snowdin} >Snowdin</Link>
           <Link to={'/waterfall'} className='link-decoration' id='waterfall' onClick={waterfall}>Waterfall</Link>
           <Link to={'hotland'} className='link-decoration' id='hotland' onClick={hotland} >Hotland</Link>
@@ -67,13 +71,13 @@ const App = () => {
             <Route path='/newhome' element={<NewHome />} />
           </Routes>
         </header>
-        <div className='seniorContainer'>
+        <div className='seniorContainer' ref={searchInput}>
           <Input />
         </div>
 
       </div>
 
-    </BrowserRouter>
+    </BrowserRouter >
   );
 
 }

@@ -4,12 +4,12 @@ import React, { useRef } from 'react';
 import './App.css';
 
 
-const Showdin = () => {
+const Snowdin = () => {
 
     return (
-        <div className='showdinContainer'>
+        <div className='snowdinContainer'>
         </div>
     );
 
 };
-export default Showdin;
+export default Snowdin;

@@ -1,27 +1,28 @@
 
 import './timer.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const App = () => {
     const [value, setValue] = useState(0);
     const [change, setChange] = useState('no');
-
+    const seconds = useRef(0);
 
     useEffect(() => {
         if (change === 'yes')
             setTimeout(() => {
                 setValue(value + 1)
-                console.log(value)
-                // if (value === 100) {
-                    
-                // }
+                if (value === 100) {
+                    seconds.current.value += Number(value / 100);
+                    setValue(0)
+                }
             }, 10);
     }, [value, change]);
 
-    // useEffect(() => {
-    //     if (reset === 'erase')
-    //         console.log('ok')
-    // }, []);
+    const reset = () => {
+        if (change === 'yes')
+            console.log("erase da memory")
+        else { console.log("nope") }
+    }
 
     const Start = (begin) => {
         return (
@@ -29,18 +30,19 @@ const App = () => {
         );
     }
 
-    // const Reset = (stop) => {
-    //     return (
-    //         <button id='reset' onClick={stop.onClick}>Reset</button>
-    //     );
-    // }
+    const ResetIt = (stop) => {
+        return (
+            <button id='reset' onClick={stop.onClick}>Reset</button>
+        );
+    }
+
     return (
 
         <div className='container'>
             <input id='numberInput' value={value}></input>
-            <input id='numberInput' ref={value}></input>
+            <input id='numberInput' ref={seconds}></input>
             <Start onClick={() => { setChange('yes') }} />
-            {/* <Reset onClick={() => { setReset('erase') }} /> */}
+            <ResetIt onClick={reset} />
         </div >
 
     );
