@@ -6,6 +6,7 @@ const App = () => {
     const [value, setValue] = useState(0);
     const [change, setChange] = useState('no');
     const seconds = useRef(0);
+    // const [second, setSecond] = useState(0);
 
     useEffect(() => {
         if (change === 'yes')
