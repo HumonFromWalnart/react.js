@@ -1,0 +1,36 @@
+.snowdinContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 1200px;
+}
+
+#greatPapyrus {
+    width: 170px;
+    height: 300px;
+    margin-left: 50px;
+}
+
+#papyrusLore {
+    width: 500px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 87, 49);
+}
+
+.loreContainer{
+    display: flex;
+    justify-content: space-around;
+}
+#battlePapyrus {
+    width: 600px;
+    height: 400px;
+    margin-right: 20px;
+}
+#papyrusDeath{
+    width: 600px;
+    height: 400px;
+    margin-left: 20px;
+}

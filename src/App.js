@@ -12,7 +12,7 @@ import Core from './core';
 import NewHome from './newHome';
 import hotlandBackground from './hotland.png';
 import ruinsBackground from './ruins.png'
-import snowdinBackground from './snowdin.png'
+import snowdinBackground from './snowdinBackground.jpeg'
 import waterfallBackground from './waterfall.png'
 import coreBackground from './core.jpg'
 import newHomeBackground from './judgementHall.jpg'
@@ -21,27 +21,30 @@ import { Button } from 'react-bootstrap';
 
 const App = () => {
 
-  const searchInput = useRef();
-  const [value, setValue] = useState();
+  // const searchInput = useRef();
+  // const [value, setValue] = useState();
 
   const hotland = () => {
-    document.body.style.backgroundImage = `url(${hotlandBackground})`
+    // document.body.style.backgroundImage = `url(${hotlandBackground})`
+    document.body.style.backgroundImage = `url(${black})`
     console.log("checking if background function is working")
   }
 
   const ruins = () => {
     document.body.style.backgroundImage = `url(${black})`
-    searchInput.current.style.display = 'none'
+    // searchInput.current.style.display = 'none'
     console.log("checking if background function is working")
   }
 
   const snowdin = () => {
-    document.body.style.backgroundImage = `url(${snowdinBackground})`
+    // document.body.style.backgroundImage = `url(${snowdinBackground})`
+    document.body.style.backgroundImage = `url(${black})`
     console.log("checking if background function is working")
   }
 
   const waterfall = () => {
-    document.body.style.backgroundImage = `url(${waterfallBackground})`
+    // document.body.style.backgroundImage = `url(${waterfallBackground})`
+    document.body.style.backgroundImage = `url(${black})`
     console.log("checking if background function is working")
   }
   const core = () => {
@@ -50,15 +53,16 @@ const App = () => {
   }
 
   const newHome = () => {
-    document.body.style.backgroundImage = `url(${newHomeBackground})`
+    // document.body.style.backgroundImage = `url(${newHomeBackground})`
+    document.body.style.backgroundImage = `url(${black})`
     console.log("checking if background function is working")
   }
 
-  const pages = ['ruins', 'snowdin', 'waterfall', 'hotland', 'core', 'newHome']
-  const [search, setSearch] = useState([])
+  // const pages = ['ruins', 'snowdin', 'waterfall', 'hotland', 'core', 'newHome']
+  // const [search, setSearch] = useState([])
 
-  const toPages = () => {
-    setSearch(pages.filter(word => word.startsWith(value)))
+  // const toPages = () => {
+  //   setSearch(pages.filter(word => word.startsWith(value)))
 
 
     // let arr = [1, 2, 3, 4, 5, 6];
@@ -69,19 +73,13 @@ const App = () => {
     // let sondgoi = arr.filter(too => too % 2)
     // console.log(sondgoi)
     
-  }
-
-  const whereIsMySuperInput = () =>{
-    searchInput.current.style.display = 'block'
-searchInput.current.firstChild.value = 'lolol'
-  }
-
+  // }
 
   return (
     < BrowserRouter >
       <div className='container'>
         <header>
-          <div id='title' onClick={whereIsMySuperInput}>Undertale HUB</div>
+          <div id='title'>Undertale HUB</div>
           <Link to={'/ruins'} className='link-decoration' id='ruins' onClick={ruins} > Ruins</Link>
           <Link to={'/snowdin'} className='link-decoration' id='snowdin' onClick={snowdin} >Snowdin</Link>
           <Link to={'/waterfall'} className='link-decoration' id='waterfall' onClick={waterfall}>Waterfall</Link>

@@ -9,7 +9,6 @@ const Ruins = () => {
 
     return (
         <div className='ruinsContainer'>
-            <header className='ruinsHeader'></header>
             <div className='lore' >
                 <div id='torielLore'>
                     Toriel is the second character the protagonist encounters in Undertale.
@@ -20,7 +19,8 @@ const Ruins = () => {
                     She wears a long purple robe with white sleeves and the Delta Rune on the chest.
                     Toriel can also be seen with reading glasses, one instance being in her house when reading a book on snail facts.
                 </div>
-                <img src={toriel} id='overWorldTorielGif' ></img></div>
+                <img src={toriel} id='overWorldTorielGif' ></img>
+                </div>
             <div className='torielBattleContainer'>
                 <img src={torielBattle} id='torielBattle' ></img>
                 <div id='torielLore'>

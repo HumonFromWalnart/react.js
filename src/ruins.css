@@ -7,10 +7,6 @@
     justify-content: space-around;
 }
 
-.ruinsHeader {
-    height: 100px;
-}
-
 #torielLore {
     color: aliceblue;
     width: 500px;
@@ -44,5 +40,5 @@
 
 #torielDeath{
    width: 500px;
-   height: 400px;
+   height: 400px
 }
