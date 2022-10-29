@@ -14,7 +14,7 @@ import hotlandBackground from './hotland.png';
 import ruinsBackground from './ruins.png'
 import snowdinBackground from './snowdinBackground.jpeg'
 import waterfallBackground from './waterfall.png'
-import coreBackground from './core.jpg'
+import coreBackground from './coreBackground.jpeg'
 import newHomeBackground from './judgementHall.jpg'
 import black from './solidBlack.jpeg'
 import { Button } from 'react-bootstrap';
@@ -48,7 +48,7 @@ const App = () => {
     console.log("checking if background function is working")
   }
   const core = () => {
-    document.body.style.backgroundImage = `url(${black})`
+    document.body.style.backgroundImage = `url(${coreBackground})`
     console.log("checking if background function is working")
   }
 

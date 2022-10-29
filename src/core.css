@@ -1,4 +1,19 @@
-body{
-    background-image: url(Undertale-Together.png);
-    background-size: 2200px 1080px;
+.coreContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 1000px;
+}
+#mettatonExLore{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgb(230, 10, 254);
+    width: 500px;
+    font-weight: 800;
+}
+#mettatonExOverworld{
+    width: 220px;
+    margin-left: 20px;
 }

@@ -5,6 +5,8 @@ import './App.css';
 import undyneOverworld from './overworldUndyne.gif'
 import undyneFight from './undyneFight.gif'
 import undynesDeath from './undynesDeath.gif'
+import undyneUndying from './UndyneUndying.gif'
+import undyneUndyingAttack from './undyneUndyingAttack.gif'
 
 const Waterfall = () => {
 
@@ -41,6 +43,14 @@ const Waterfall = () => {
 
                 </p>
             </div>
+            {/* <div className='lore'>
+                <img src={undyneUndying}></img>
+                <div id='undyneLore'></div>
+            </div>
+            <div className='lore'>
+                <img src={undyneUndyingAttack}></img>
+                <div id='lore'></div>
+            </div> */}
         </div>
     );
 
