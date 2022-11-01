@@ -3,8 +3,10 @@ import './core.css';
 import './App.css';
 import React from 'react';
 import mettatonEx from './mettatonExOverworld.gif'
-import mettatonNeo from './Mettaton_NEO.gif'
+// import mettatonNeo from './Mettaton_NEO.gif'
 import mettatonBattle from './mettatonExAttack.gif'
+import mettatonDeath from './mettatonDeath.gif'
+import test from './mettatonLore.js'
 // import mettatonNoStage from './mettatonDancingWithoutStage.gif'
 // import mettatonGuitar from './mettatonGuitar.gif'
 // import cursedToriel from './cursedToriel.gif'
@@ -36,8 +38,15 @@ const Core = () => {
                 </div>
             </div>
             <div className='loreContainer'>
-
-                <div id='mettatonExLore'></div>
+                <div id='mettatonExLore'>
+                    If Mettaton EX is spared, he appears only as his torso and head when the game returns to the overworld view.
+                    This happens even if the protagonist ends the fight before his limbs fall off.
+                    However, if he is killed, he appears in his original box form in the overworld view, but destroyed.
+                    For those who plan on killing Mettaton, methods that decrease ratings should be used, as the ratings may hit 10,000 before the protagonist kills Mettaton.
+                    Methods that decrease ratings include writing a curse word during the essay and eating Junk Food, so bringing a full inventory of Junk Food is advised.
+                    Waiting between turns also steadily decreases ratings. However, it stops decreasing after a certain point.
+                </div>
+                <img src={mettatonDeath}></img>
             </div>
             {/* <div className='loreContainer'>
                 <img src={mettatonNeo}></img>
@@ -50,5 +59,6 @@ const Core = () => {
         </div>
     );
 
+    
 };
 export default Core;
