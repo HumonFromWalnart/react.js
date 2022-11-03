@@ -8,16 +8,22 @@ import Waterfall from './waterfall';
 import Hotland from './hotland';
 import Core from './core';
 import NewHome from './newHome';
+import Lol from './lol.js'
 import Input from './searchInput.js'
 import black from './solidBlack.jpeg'
 import { keyboard } from '@testing-library/user-event/dist/keyboard';
+import ricksWithGun from './rickWithGun.gif'
 
 
 const App = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState();
+  const gone = useRef();
 
-
+  const ricks = () => {
+    document.body.style.backgroundImage = `url(${ricksWithGun})`
+    gone.current.style.display = 'none'
+  }
   const hotland = () => {
     console.log("checking if background function is working")
   }
@@ -48,7 +54,7 @@ const App = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='container' ref={gone}>
       <header>
         <div id='title' onClick={() => navigate("./App")}>Undertale HUB</div>
         <Link to={'/ruins'} className='link-decoration' id='ruins' onClick={ruins} > Ruins</Link>
@@ -65,6 +71,7 @@ const App = () => {
         <Route path='/hotland' element={<Hotland />} />
         <Route path='/core' element={<Core />} />
         <Route path='/newhome' element={<NewHome />} />
+        <Route path='/lol' element={<Lol/>}/>
       </Routes>
       <div className='seniorContainer'>
         <div>
@@ -74,7 +81,7 @@ const App = () => {
 
         {/* {search.map((page) => <div style={{ color: 'white' }}>{page}</div>)} */}
       </div>
-      3
+        <div style={{color:'white'}} onClick={ricks}>Undertale Rule 34</div>
 
     </div >
 

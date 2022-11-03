@@ -3,7 +3,7 @@ body {
   margin: 0%;
   display: flex;
   flex-direction: column;
-  background-size: 4020px 2600px;
+  background-size: 1920px 1080px;
 }
 
 header {
@@ -77,16 +77,19 @@ header {
   height: 60px;
   font-size: 35px;
   border: none;
-  box-shadow: 0 0 50px #05c3e2;
+  box-shadow: 0 0 20px #05c3e2;
+  border: 2px solid rgb(0, 183, 255);
+  background: none;
+  color: rgb(0, 183, 255);
 }
 
 #travelButton {
   width: 100px;
-  height: 60px;
+  height: 65px;
   margin-left: 10px;
   outline: none;
   background-color: #f000;
-  border: 2px solid rgb(255, 255, 255);
-  color: white;
-  box-shadow: 0 0 10px white;
+  border: 2px solid rgb(0, 183, 255);
+  color: rgb(0, 183, 255);
+  box-shadow: 0 0 10px rgb(0, 183, 255);
 }
