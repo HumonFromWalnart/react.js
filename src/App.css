@@ -79,3 +79,14 @@ header {
   border: none;
   box-shadow: 0 0 50px #05c3e2;
 }
+
+#travelButton {
+  width: 100px;
+  height: 60px;
+  margin-left: 10px;
+  outline: none;
+  background-color: #f000;
+  border: 2px solid rgb(255, 255, 255);
+  color: white;
+  box-shadow: 0 0 10px white;
+}

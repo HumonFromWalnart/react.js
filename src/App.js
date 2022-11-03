@@ -1,8 +1,6 @@
 
-// import jesus from './jesus-ballin.gif'
-// import mettaton from './Mettaton_NEO.gif'
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Ruins from './ruins';
 import Snowdin from './snowdin';
@@ -10,87 +8,44 @@ import Waterfall from './waterfall';
 import Hotland from './hotland';
 import Core from './core';
 import NewHome from './newHome';
-// import hotlandBackground from './hotland.png';
-// import ruinsBackground from './ruins.png'
-// import snowdinBackground from './snowdinBackground.jpeg'
-// import waterfallBackground from './waterfall.png'
-// import coreBackground from './coreBackground.jpeg'
-// import newHomeBackground from './neon.gif'
+import Input from './searchInput.js'
 import black from './solidBlack.jpeg'
-import { Button } from 'react-bootstrap';
 import { keyboard } from '@testing-library/user-event/dist/keyboard';
-
-
 
 
 const App = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState();
 
+
   const hotland = () => {
-    // document.body.style.backgroundImage = `url(${hotlandBackground})`
-    // document.body.style.backgroundImage = `url(${black})`
     console.log("checking if background function is working")
   }
-
   const ruins = () => {
-    // document.body.style.backgroundImage = `url(${black})`
-    // searchInput.current.style.display = 'none'
     console.log("checking if background function is working")
   }
-
   const snowdin = () => {
-    // document.body.style.backgroundImage = `url(${snowdinBackground})`
-    // document.body.style.backgroundImage = `url(${black})`
     console.log("checking if background function is working")
   }
-
   const waterfall = () => {
-    // document.body.style.backgroundImage = `url(${waterfallBackground})`
-    // document.body.style.backgroundImage = `url(${black})`
     console.log("checking if background function is working")
   }
   const core = () => {
-    // document.body.style.backgroundImage = `url(${black})`
     console.log("checking if background function is working")
   }
-
   const newHome = () => {
-    // document.body.style.backgroundImage = `url(${newHomeBackground})`
-    // document.body.style.backgroundImage = `url(${black})`
     console.log("checking if background function is working")
   }
 
   const pages = ['ruins', 'snowdin', 'waterfall', 'hotland', 'core', 'newHome']
   const [search, setSearch] = useState([])
+  const lol = useRef();
 
 
   const toPages = () => {
     setSearch(pages.filter(word => word.startsWith(value)))
     navigate(`./${value}`)
   }
-  // const enter = (e) => {
-  //   if (e.key === 'enter') {
-  //     setSearch(pages.filter(word => word.startsWith(value)))
-  //     navigate(`./${value}`)
-  //   }
-  // }
-
-  // let arr = [1, 2, 3, 4, 5, 6];
-  // let sondgoi = []
-  // for (let i = 0; i < arr.length; i++) {
-  //   if (arr[i] % 2 === 1) sondgoi.push(arr[i])
-  // } 
-  // let sondgoi = arr.filter(too => too % 2)
-  // console.log(sondgoi)
-
-  // useEffect(() => {
-  //   const event = new KeyboardEvent('keypress', {
-  //     key: 'enter',
-  //   });
-  // }, []);
-
-
 
   return (
     <div className='container'>
@@ -127,32 +82,17 @@ const App = () => {
 
 }
 
-const Input = ({ value, setValue }) => {
-
-  const navigateSecond = useNavigate();
-
-  const KeyPressed = (e) => {
-    if (e.key === 'Enter') {
-      navigateSecond(`./${value}`)
-    }
-  }
-  return (
-    <input value={value} id='searchInput' type={'text'} placeholder='Search' onChange={(e) => setValue(e.target.value)} onKeyDown={(e) => KeyPressed(e)} />
-  )
-}
-
-
 
 const BootsTrapButton = (test) => {
   return (
     <>
 
-      <Button variant="warning" onClick={test.onClick}>TRAVEL</Button>{''}
+      {/* <Button onClick={test.onClick}>TRAVEL</Button>{''} */}
+      <button id='travelButton' onClick={test.onClick} >Travel</button>
 
     </>
   )
 }
-
 export default App;
 
 
