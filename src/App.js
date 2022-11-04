@@ -8,8 +8,7 @@ import Waterfall from './waterfall';
 import Hotland from './hotland';
 import Core from './core';
 import NewHome from './newHome';
-import Lol from './lol.js'
-import Input from './searchInput.js'
+import Rickroll from './rickroll.js'
 import black from './solidBlack.jpeg'
 import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import ricksWithGun from './rickWithGun.gif'
@@ -20,7 +19,8 @@ const App = () => {
   const [value, setValue] = useState();
   const gone = useRef();
 
-  const ricks = () => {
+
+  const play = () => {
     document.body.style.backgroundImage = `url(${ricksWithGun})`
     gone.current.style.display = 'none'
   }
@@ -71,7 +71,7 @@ const App = () => {
         <Route path='/hotland' element={<Hotland />} />
         <Route path='/core' element={<Core />} />
         <Route path='/newhome' element={<NewHome />} />
-        <Route path='/lol' element={<Lol/>}/>
+        <Route path='/rickroll' element={<Rickroll />} />
       </Routes>
       <div className='seniorContainer'>
         <div>
@@ -81,7 +81,7 @@ const App = () => {
 
         {/* {search.map((page) => <div style={{ color: 'white' }}>{page}</div>)} */}
       </div>
-        <div style={{color:'white'}} onClick={ricks}>Undertale Rule 34</div>
+      <div style={{ color: 'white' }} onClick={play}>Undertale Rule 34</div>
 
     </div >
 
@@ -100,6 +100,21 @@ const BootsTrapButton = (test) => {
     </>
   )
 }
+
+const Input = ({ value, setValue }) => {
+
+  const navigateSecond = useNavigate();
+
+  const KeyPressed = (e) => {
+    if (e.key === 'Enter') {
+      navigateSecond(`./${value}`)
+    }
+  }
+  return (
+    <input value={value} id='searchInput' type={'text'} placeholder='Search' onChange={(e) => setValue(e.target.value)} onKeyDown={(e) => KeyPressed(e)} />
+  )
+}
+
 export default App;
 
 
