@@ -1,7 +1,7 @@
 
 import './App.css';
-import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Ruins from './ruins';
 import Snowdin from './snowdin';
 import Waterfall from './waterfall';
@@ -10,20 +10,37 @@ import Core from './core';
 import NewHome from './newHome';
 import Rickroll from './rickroll.js'
 import black from './solidBlack.jpeg'
+import coreBackground from './coreBackground.jpeg'
 import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import ricksWithGun from './rickWithGun.gif'
-
+import BootsTrapButton from './searchButton';
+import Input from './searchInput';
+import Sus from './sus.js'
+import { ChangeTheme } from './themeChangerButton';
+import Theme from './context';
+import { useContext } from 'react';
+import { ThemeContext } from './context';
 
 const App = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState();
   const gone = useRef();
-
+  const pages = ['ruins', 'snowdin', 'waterfall', 'hotland', 'core', 'newHome']
+  const [search, setSearch] = useState([])
+  const { nig, switchinTime } = useContext(ThemeContext)
+  const False = 0;
+  const change = () => {
+    if (nig === False) {
+      console.log('false')
+      document.body.style.backgroundImage = `url(${black})`
+    }
+  }
 
   const play = () => {
     document.body.style.backgroundImage = `url(${ricksWithGun})`
     gone.current.style.display = 'none'
   }
+
   const hotland = () => {
     console.log("checking if background function is working")
   }
@@ -43,12 +60,11 @@ const App = () => {
     console.log("checking if background function is working")
   }
 
-  const pages = ['ruins', 'snowdin', 'waterfall', 'hotland', 'core', 'newHome']
-  const [search, setSearch] = useState([])
-  const lol = useRef();
-
 
   const toPages = () => {
+    if (value == undefined) {
+      setValue('its empty boi')
+    }
     setSearch(pages.filter(word => word.startsWith(value)))
     navigate(`./${value}`)
   }
@@ -57,6 +73,7 @@ const App = () => {
     <div className='container' ref={gone}>
       <header>
         <div id='title' onClick={() => navigate("./App")}>Undertale HUB</div>
+        <ChangeTheme onClick={change} />
         <Link to={'/ruins'} className='link-decoration' id='ruins' onClick={ruins} > Ruins</Link>
         <Link to={'/snowdin'} className='link-decoration' id='snowdin' onClick={snowdin} >Snowdin</Link>
         <Link to={'/waterfall'} className='link-decoration' id='waterfall' onClick={waterfall}>Waterfall</Link>
@@ -78,41 +95,13 @@ const App = () => {
           <Input value={value} setValue={setValue} />
         </div>
         <BootsTrapButton onClick={toPages} id='searchButton' />
-
-        {/* {search.map((page) => <div style={{ color: 'white' }}>{page}</div>)} */}
       </div>
-      <div style={{ color: 'white' }} onClick={play}>Undertale Rule 34</div>
-
+      <Sus onClick={play} />
     </div >
 
   );
 
-}
 
-
-const BootsTrapButton = (test) => {
-  return (
-    <>
-
-      {/* <Button onClick={test.onClick}>TRAVEL</Button>{''} */}
-      <button id='travelButton' onClick={test.onClick} >Travel</button>
-
-    </>
-  )
-}
-
-const Input = ({ value, setValue }) => {
-
-  const navigateSecond = useNavigate();
-
-  const KeyPressed = (e) => {
-    if (e.key === 'Enter') {
-      navigateSecond(`./${value}`)
-    }
-  }
-  return (
-    <input value={value} id='searchInput' type={'text'} placeholder='Search' onChange={(e) => setValue(e.target.value)} onKeyDown={(e) => KeyPressed(e)} />
-  )
 }
 
 export default App;
