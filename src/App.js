@@ -20,6 +20,7 @@ import { ChangeTheme } from './themeChangerButton';
 import Theme from './context';
 import { useContext } from 'react';
 import { ThemeContext } from './context';
+import { Lore1 } from './coreLoreComponent';
 
 const App = () => {
   const navigate = useNavigate();
@@ -27,14 +28,8 @@ const App = () => {
   const gone = useRef();
   const pages = ['ruins', 'snowdin', 'waterfall', 'hotland', 'core', 'newHome']
   const [search, setSearch] = useState([])
-  const { nig, switchinTime } = useContext(ThemeContext)
-  const False = 0;
-  const change = () => {
-    if (nig === False) {
-      console.log('false')
-      document.body.style.backgroundImage = `url(${black})`
-    }
-  }
+  const { nig, switchinTime, becomeNig } = useContext(ThemeContext)
+
 
   const play = () => {
     document.body.style.backgroundImage = `url(${ricksWithGun})`
@@ -62,7 +57,7 @@ const App = () => {
 
 
   const toPages = () => {
-    if (value == undefined) {
+    if (value === undefined) {
       setValue('its empty boi')
     }
     setSearch(pages.filter(word => word.startsWith(value)))
@@ -70,35 +65,36 @@ const App = () => {
   }
 
   return (
-    <div className='container' ref={gone}>
-      <header>
-        <div id='title' onClick={() => navigate("./App")}>Undertale HUB</div>
-        <ChangeTheme onClick={change} />
-        <Link to={'/ruins'} className='link-decoration' id='ruins' onClick={ruins} > Ruins</Link>
-        <Link to={'/snowdin'} className='link-decoration' id='snowdin' onClick={snowdin} >Snowdin</Link>
-        <Link to={'/waterfall'} className='link-decoration' id='waterfall' onClick={waterfall}>Waterfall</Link>
-        <Link to={'hotland'} className='link-decoration' id='hotland' onClick={hotland} >Hotland</Link>
-        <Link to={'/core'} className='link-decoration' id='core' onClick={core}>Core</Link>
-        <Link to={'/newhome'} className='link-decoration' id='newHome' onClick={newHome} >NewHome</Link>
-      </header>
-      <Routes>
-        <Route path='/ruins' element={<Ruins />} />
-        <Route path='/snowdin' element={<Snowdin />} />
-        <Route path='/waterfall' element={<Waterfall />} />
-        <Route path='/hotland' element={<Hotland />} />
-        <Route path='/core' element={<Core />} />
-        <Route path='/newhome' element={<NewHome />} />
-        <Route path='/rickroll' element={<Rickroll />} />
-      </Routes>
-      <div className='seniorContainer'>
-        <div>
-          <Input value={value} setValue={setValue} />
+    <Lore1>
+      <div className={`container ${nig && 'dark'} `} ref={gone}>
+        <header>
+          <div id='title' onClick={() => navigate("./App")}>Undertale HUB</div>
+          <ChangeTheme onClick={switchinTime} />
+          <Link to={'/ruins'} className='link-decoration' id='ruins' onClick={ruins} > Ruins</Link>
+          <Link to={'/snowdin'} className='link-decoration' id='snowdin' onClick={snowdin} >Snowdin</Link>
+          <Link to={'/waterfall'} className='link-decoration' id='waterfall' onClick={waterfall}>Waterfall</Link>
+          <Link to={'hotland'} className='link-decoration' id='hotland' onClick={hotland} >Hotland</Link>
+          <Link to={'/core'} className='link-decoration' id='core' onClick={core}>Core</Link>
+          <Link to={'/newhome'} className='link-decoration' id='newHome' onClick={newHome} >NewHome</Link>
+        </header>
+        <Routes>
+          <Route path='/ruins' element={<Ruins />} />
+          <Route path='/snowdin' element={<Snowdin />} />
+          <Route path='/waterfall' element={<Waterfall />} />
+          <Route path='/hotland' element={<Hotland />} />
+          <Route path='/core' element={<Core />} />
+          <Route path='/newhome' element={<NewHome />} />
+          <Route path='/rickroll' element={<Rickroll />} />
+        </Routes>
+        <div className='seniorContainer'>
+          <div>
+            <Input value={value} setValue={setValue} />
+          </div>
+          <BootsTrapButton onClick={toPages} id='searchButton' />
         </div>
-        <BootsTrapButton onClick={toPages} id='searchButton' />
-      </div>
-      <Sus onClick={play} />
-    </div >
-
+        <Sus onClick={play} />
+      </div >
+    </Lore1>
   );
 
 

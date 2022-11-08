@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './App.css';
-import App from './App.js';
+import AppSecond from './axiosTest.js';
+import App from './App.js'
 import { BrowserRouter } from 'react-router-dom';
 import Theme from './context';
 
@@ -10,9 +11,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Theme>
-        <App />
+        <AppSecond />
       </Theme>
-
     </BrowserRouter>
   </React.StrictMode>
 );

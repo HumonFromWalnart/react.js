@@ -4,13 +4,14 @@ import React from "react";
 export const ThemeContext = createContext();
 
 export const Theme = ({ children }) =>{
-    const [nig, becomeNig] = useState(0);
+    const [nig, becomeNig] = useState(false);
 
     const switchinTime = () => {
        becomeNig(!nig)
+       console.log(nig)
     }
     return(
-        <ThemeContext.Provider value={{switchinTime, nig}}>
+        <ThemeContext.Provider value={{switchinTime, nig, becomeNig}}>
             {children}
         </ThemeContext.Provider>
     )

@@ -1,10 +1,10 @@
-body {
+/* body {
   background-image: url(Undertale-Together.png);
   margin: 0%;
   display: flex;
   flex-direction: column;
   background-size: 1920px 1080px;
-}
+} */
 
 header {
   height: 100px;
@@ -92,4 +92,8 @@ header {
   border: 2px solid rgb(0, 183, 255);
   color: rgb(0, 183, 255);
   box-shadow: 0 0 10px rgb(0, 183, 255);
+}
+
+.dark{
+  background-color: black;
 }
