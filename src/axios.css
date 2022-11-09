@@ -1,16 +1,19 @@
-body{
+body {
     background-color: black;
 }
-.App{
-display: flex;
-flex-direction: column;
-align-items: center;
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-#image{
+
+#image {
     width: 800px;
     height: 500px;
 }
-#comments{
+
+#comments {
     width: 100px;
     height: 100px;
     background-color: blueviolet;

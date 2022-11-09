@@ -14,10 +14,9 @@ import coreBackground from './coreBackground.jpeg'
 import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import ricksWithGun from './rickWithGun.gif'
 import BootsTrapButton from './searchButton';
-import Input from './searchInput';
+import Input from './SearchInput.js';
 import Sus from './sus.js'
 import { ChangeTheme } from './themeChangerButton';
-import Theme from './context';
 import { useContext } from 'react';
 import { ThemeContext } from './context';
 import { Lore1 } from './coreLoreComponent';
@@ -29,7 +28,6 @@ const App = () => {
   const pages = ['ruins', 'snowdin', 'waterfall', 'hotland', 'core', 'newHome']
   const [search, setSearch] = useState([])
   const { nig, switchinTime, becomeNig } = useContext(ThemeContext)
-
 
   const play = () => {
     document.body.style.backgroundImage = `url(${ricksWithGun})`

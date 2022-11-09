@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './App.css';
 import AppSecond from './axiosTest.js';
-import App from './App.js'
+import App from './wishlist.js'
 import { BrowserRouter } from 'react-router-dom';
 import Theme from './context';
 

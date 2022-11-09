@@ -3,7 +3,7 @@ import React from "react";
 
 export const loreContext = createContext();
 
-export function Lore1({ children }) {
+export function Lore1({ Children }) {
     const [lore, updateLore] = useState(`   
     After having the switch on his back flipped in the Neutral or True Pacifist Route, Mettaton transforms into Mettaton EX; a new body he specially requested Alphys make for him.
     In this humanoid form, he has black hair with a long fringe that seems to cover his right eye, pale "skin" and visible metal segments below and above his left eye.
@@ -19,7 +19,7 @@ export function Lore1({ children }) {
     An exclamation mark appears in the area that they will appear in before this attack is used.
     Small rectangular Mettatons glide down on umbrellas. As they reach the bottom of the screen, they begin to toss hearts that are embroidered with the letter M: they will often toss a second set upwards just as they are leaving the bottom of the screen.
     `)
-     
+
     const [lore3, updateLore3] = useState(`                    
     If Mettaton EX is spared, he appears only as his torso and head when the game returns to the overworld view.
     This happens even if the protagonist ends the fight before his limbs fall off.
@@ -31,7 +31,7 @@ export function Lore1({ children }) {
 
     return (
         <loreContext.Provider value={{ lore, lore2, lore3 }}>
-            {children}
+            {Children}
         </loreContext.Provider>
     );
 } 
