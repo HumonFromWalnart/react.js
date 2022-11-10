@@ -22,6 +22,7 @@ import { ThemeContext } from './context';
 import { Lore1 } from './coreLoreComponent';
 
 const App = () => {
+
   const navigate = useNavigate();
   const [value, setValue] = useState();
   const gone = useRef();

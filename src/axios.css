@@ -8,9 +8,22 @@ body {
     align-items: center;
 }
 
+#commentContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+}
+
+#imageContainer{
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+}
+
 #image {
-    width: 800px;
-    height: 500px;
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
 }
 
 #comments {
@@ -18,4 +31,10 @@ body {
     height: 100px;
     background-color: blueviolet;
     color: aliceblue;
+}
+
+#apiContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
