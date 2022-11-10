@@ -21,20 +21,29 @@ body {
 }
 
 #image {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 30px;
 }
 
-#comments {
-    width: 100px;
-    height: 100px;
-    background-color: blueviolet;
+#comment {
+    width: 300px;
     color: aliceblue;
 }
 
-#apiContainer{
+#userPic{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+#name{
+    color: wheat;
+}
+
+.profile{
     display: flex;
-    flex-direction: column;
     align-items: center;
+    width: 130px;
+    justify-content: space-between;
 }

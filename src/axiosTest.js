@@ -1,4 +1,4 @@
-import React, { createElement, useState } from 'react';
+import React, { createElement, useEffect, useState } from 'react';
 import axios from 'axios';
 import { instance } from './axiosSrc';
 import './axios.css';
@@ -12,19 +12,16 @@ function AppSecond() {
   const [comments, updateComments] = useState([]);
   const limit = '?limit=1'
 
-
-  const getData = async () => {
-    try {
+  useEffect(() =>{
+    const getData = async() =>{
       const res = await instance.get(`post${limit}`)
-      // const lol = await instance.get(`post${limit}`)
-      // setData2(lol.data.data)
-      // console.log(lol.data.data)
       setData(res.data.data)
       console.log(res.data.data)
-    } catch (err) {
-      alert('Eyo, Site has living cancer');
-    }
   }
+  getData()
+  .catch(console.error);
+  },[])
+
 
 
   // const getData = async () => {
@@ -71,12 +68,9 @@ function AppSecond() {
 
   return (
     <div className="App">
-      <h1>Hi</h1>
-      <button onClick={getData}>send request</button>
       <div id='apiContainer'>
-
      
-          {data.map((cur) => <Card text={cur.text} image={cur.image} profile={cur.owner.image} />)}
+          {data.map((cur) => <Card text={cur.text} image={cur.image} profile={cur.owner.picture} name={cur.owner.firstName} />)}
         
 
         {/* <div id='imageContainer'>
