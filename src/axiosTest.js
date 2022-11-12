@@ -1,111 +1,47 @@
-import React, { createElement, useEffect, useState } from 'react';
+import React, { createElement, useEffect, useState, createContext, useContext } from 'react';
 import axios from 'axios';
 import { instance } from './axiosSrc';
 import './axios.css';
-import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils';
-import { Card } from './card.js';
- 
-function AppSecond() {
+
+export const CardContext = createContext();
+
+function AppSecond({ children }) {
   const [data, setData] = useState([]);
   const [data2, setData2] = useState([]);
-  const [comment, updateComment] = useState('');
-  const [comments, updateComments] = useState([]);
   const limit = '?limit=1'
+  const [texts, updateText] = useState([]);
+  const [image, updateImage] = useState([]);
+  const [comment, updateComment] = useState();
+  const [profile, updateProfile] = useState([]);
+  const [userName, updateUserName]  =useState([]);
+  const [date, updateDate] = useState([]);
 
-  useEffect(() =>{
-    const getData = async() =>{
+  useEffect(() => {
+    const getData = async () => {
       const res = await instance.get(`post${limit}`)
       setData(res.data.data)
+
       console.log(res.data.data)
-  }
-  getData()
-  .catch(console.error);
-  },[])
+      const com = await instance.get(`comment${limit}`)
+      setData2(com.data.data)
+      console.log(com.data.data)
 
-
-
-  // const getData = async () => {
-  //   try {
-  //     const res = await axios.get(`https://dummyapi.io/data/v1/post?limit=${number}`, {
-  //       headers: {
-  //         "Content-type": "application/json; charset=UTF-8",
-  //         "app-id": "636a0100b23c1794f297d097"
-  //       }
-  //     })
-
-  //     setData(res.data.data);
-
-  //     console.log(res.data.data);
-  //   } catch (err) {
-  //     alert('Eyo, site has living cancer');
-  //   }
-  // }
-
-  // function Text({ value, comments, updateComments }) {
-  //   const deleteIT = () => {
-  //     const newComment = comments.filter((cur) => cur !== value);
-  //     updateComments(newComment);
-  //   }
-
-  //   return (
-  //     <div id='task-container'>
-  //       <Negative onClick={deleteIT}></Negative>
-  //     </div>
-  //   )
-  // }
-  // const Negative = (negative) => {
-  //   return (
-  //     <div>
-  //       <button id="negative" onClick={negative.onClick} >Delete</button>
-  //       <div id='uSuck' onMouseOver={USUCK}>YOU SUCK</div>
-  //     </div >
-  //   );
-  // }
-
-  // function USUCK() {
-  //   alert('BONK! OH YEAH! YOU SUCK!')
-  // }
-
+      updateText(res.data.data.map((cur) => { return (cur.text)}))
+      updateImage(res.data.data.map((img) => { return (img.image); }))
+      updateComment(com.data.data.map((com) => {return com.message}))
+      updateProfile(res.data.data.map((pro) => {return (pro.owner.picture)}))
+      updateUserName(res.data.data.map((nam) => {return (nam.owner.firstName)}))
+      updateDate(res.data.data.map((ymd) => {return (ymd.publishDate)}))
+    }
+    getData()
+      .catch(console.error);
+  }, [])
   return (
-    <div className="App">
-      <div id='apiContainer'>
-     
-          {data.map((cur) => <Card text={cur.text} image={cur.image} profile={cur.owner.picture} name={cur.owner.firstName} />)}
-        
-
-        {/* <div id='imageContainer'>
-          {data2.map((img) =>  <Card/>)}
-        </div> */}
-
-      </div>
-      {/* <div className='imageContainer'>
-
-
-        <input value={comment} onChange={(e) => { updateComment(e.target.value) }}></input>
-
-        <button onClick={() => { updateComments([...comments, comment]); updateComment(''); getData(); }}>
-          add
-        </button>
-        {data.map((cur) => <div><img id='image' src={cur.owner.picture} /></div>)}
-        {comments.map((add) => <div id='comments'>{add}</div>)}
-        {comments.map((doIt) => <Text value={doIt} comments={comments} updateComments={updateComments} />)}
-
-      </div> */}
-    </div>
+    <CardContext.Provider value={{ texts, image, comment, profile, userName, date }}>
+      {children}
+    </CardContext.Provider>
   );
-
 }
 
 export default AppSecond;
 
-
-
-{/* {
-          data.map((cur) => <div><img id='image' src={cur.image} /></div>)
-
-
-          arr = ['1', '2', '3']
-          ...arr => '1', '2', '3'
-          [arr] = [['1', '2']]
-          [...arr] = ['1', '2']
-        } */}

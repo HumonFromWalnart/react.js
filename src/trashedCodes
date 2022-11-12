@@ -1,0 +1,67 @@
+      {/* <div className='imageContainer'>
+
+
+        <input value={comment} onChange={(e) => { updateComment(e.target.value) }}></input>
+
+        <button onClick={() => { updateComments([...comments, comment]); updateComment(''); getData(); }}>
+          add
+        </button>
+        {data.map((cur) => <div><img id='image' src={cur.owner.picture} /></div>)}
+        {comments.map((add) => <div id='comments'>{add}</div>)}
+        {comments.map((doIt) => <Text value={doIt} comments={comments} updateComments={updateComments} />)}
+
+      </div> */}
+      {/* {
+          data.map((cur) => <div><img id='image' src={cur.image} /></div>)
+
+
+          arr = ['1', '2', '3']
+          ...arr => '1', '2', '3'
+          [arr] = [['1', '2']]
+          [...arr] = ['1', '2']
+        } */}
+                {/* <div id='imageContainer'>
+          {data2.map((img) =>  <Card/>)}
+        </div> */}
+
+          // const getData = async () => {
+  //   try {
+  //     const res = await axios.get(`https://dummyapi.io/data/v1/post?limit=${number}`, {
+  //       headers: {
+  //         "Content-type": "application/json; charset=UTF-8",
+  //         "app-id": "636a0100b23c1794f297d097"
+  //       }
+  //     })
+
+  //     setData(res.data.data);
+
+  //     console.log(res.data.data);
+  //   } catch (err) {
+  //     alert('Eyo, site has living cancer');
+  //   }
+  // }
+
+  // function Text({ value, comments, updateComments }) {
+  //   const deleteIT = () => {
+  //     const newComment = comments.filter((cur) => cur !== value);
+  //     updateComments(newComment);
+  //   }
+
+  //   return (
+  //     <div id='task-container'>
+  //       <Negative onClick={deleteIT}></Negative>
+  //     </div>
+  //   )
+  // }
+  // const Negative = (negative) => {
+  //   return (
+  //     <div>
+  //       <button id="negative" onClick={negative.onClick} >Delete</button>
+  //       <div id='uSuck' onMouseOver={USUCK}>YOU SUCK</div>
+  //     </div >
+  //   );
+  // }
+
+  // function USUCK() {
+  //   alert('BONK! OH YEAH! YOU SUCK!')
+  // }

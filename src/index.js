@@ -2,16 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './App.css';
 import AppSecond from './axiosTest.js';
-import App from './wishlist.js'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Theme from './context';
+import { CardBOI } from './card';
+import Waterfall from './waterfall';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Theme>
-        <AppSecond />
+        <AppSecond>
+          <Routes>
+            <Route path='/' element={<CardBOI />} />
+            <Route path='/:id' element={<Waterfall />} />
+          </Routes>
+        </AppSecond>
       </Theme>
     </BrowserRouter>
   </React.StrictMode>

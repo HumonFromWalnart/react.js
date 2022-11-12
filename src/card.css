@@ -1,0 +1,81 @@
+.dark {
+    background-color: aliceblue;
+}
+
+* {
+    margin: 0%;
+    color: white;
+}
+
+#image {
+    width: 100px;
+    height: 100px;
+}
+
+.white {
+    background-color: purple;
+}
+
+.user {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 270px;
+}
+
+#comment {
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#commentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 200px;
+    justify-content: space-between;
+    height: 50px;
+}
+
+#image {
+    width: 300px;
+    height: 200px;
+    border-radius: 30px;
+}
+
+#description {
+    color: wheat;
+}
+
+#comment {
+    width: 300px;
+    color: aliceblue;
+}
+
+#userPic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+#name {
+    color: wheat;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 120px;
+    background-color: rgb(34, 73, 88);
+    border-radius: 30px;
+}
