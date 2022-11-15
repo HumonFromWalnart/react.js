@@ -5,7 +5,7 @@ import AppSecond from './axiosTest.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Theme from './context';
 import { CardBOI } from './card';
-import Waterfall from './waterfall';
+import Post1 from './post1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +15,7 @@ root.render(
         <AppSecond>
           <Routes>
             <Route path='/' element={<CardBOI />} />
-            <Route path='/:id' element={<Waterfall />} />
+            <Route path='post/:id' element={<Post1 />} />
           </Routes>
         </AppSecond>
       </Theme>

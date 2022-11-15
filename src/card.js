@@ -1,5 +1,5 @@
 import { CardContext } from "./axiosTest";
-import React from "react";
+import React, { useEffect } from "react";
 import './axios.css'
 import './card.css'
 import { useContext } from "react";
@@ -9,35 +9,29 @@ import { useNavigate, useParams } from "react-router-dom";
 
 
 export const CardBOI = () => {
-    const { texts, image, comment, profile, userName, date } = useContext(CardContext);
-    const { nig, switchinTime } = useContext(ThemeContext)
-
-    const { id } = useParams()
-    console.log(id)
+    const { data, data2 } = useContext(CardContext);
+    const { nig, switchinTime } = useContext(ThemeContext);
 
     const navigate = useNavigate();
 
-    function UNDYNEEEE() {
-        navigate(`UNDYNE`)
+    function UNDYNEEEE(cur) {
+        navigate(`/post/${cur.id}`)
     }
     return (
         <div className={`container ${nig && 'dark'} `}>
             <ChangeTheme onClick={switchinTime} />
             {
-                texts.map((cur, index) => {
+                data.map((cur) => {
                     return (
                         <div id='cardContainer'>
-                            <img id="image" src={image[index]} onClick={UNDYNEEEE}></img>
-                            <div id="description">{texts[index]}</div>
-
+                            <img id="image" src={cur.image} onClick={()=>UNDYNEEEE(cur)} />
+                            <div id="description">{cur.text}</div>
                             <div className='profile'>
                                 <div className="user">
-                                    <img id="userPic" src={profile[index]}></img>
+                                    <img id="userPic" src={cur.owner.picture}></img>
                                     <div id="commentContainer">
-                                        <div id="userName" >{userName[index]}</div>
-                                        <div id='comment' >{comment[index]}</div>
+                                        <div id="userName" >{cur.owner.firstName}</div>
                                     </div>
-                                    {/* <div>{date[index]}</div> */}
                                 </div>
 
                             </div>
@@ -46,10 +40,6 @@ export const CardBOI = () => {
                     )
                 })
             }
-            {/* <div className="profile">
-                <img id="userPic" src={profile}></img>
-                <div id="name">{name}</div>
-            </div>  */}
         </div>
 
     );
