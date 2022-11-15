@@ -24,8 +24,8 @@ export const CardBOI = () => {
                 data.map((cur) => {
                     return (
                         <div id='cardContainer'>
-                            <img id="image" src={cur.image} onClick={()=>UNDYNEEEE(cur)} />
-                            <div id="description">{cur.text}</div>
+                            <div id="description" className={`${nig && 'dark'}`}>{cur.text}</div>
+                            <img id="image" src={cur.image} onClick={() => UNDYNEEEE(cur)} />
                             <div className='profile'>
                                 <div className="user">
                                     <img id="userPic" src={cur.owner.picture}></img>
