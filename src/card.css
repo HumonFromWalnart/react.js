@@ -1,74 +1,47 @@
+* {
+    margin: 0%;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
 .dark {
+    /* background-image: url('4klol.jpeg'); */
     background-color: rgb(0, 0, 0);
 }
 
-.whitecolor{
-    color: red;
-}
-#cardContainer{
+.post {
+    background-color: wheat;
+    width: 500px;
+    height: 450px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-* {
-    margin: 0%;
-    color: white;
+.postBackground {
+    background-color: rgba(91, 39, 39, 0);
 }
 
-.user {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 270px;
+.white {
+    color: rgb(202, 202, 202) !important;
+    font-weight: bold;
 }
 
-#comment {
-    color: white;
-}
-
-body {
-    background-color: rgb(255, 255, 255);
-}
-
-.App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#commentContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    width: 200px;
-    justify-content: space-between;
-    height: 50px;
+#description {
+    text-align: center;
+    width: 400px;
 }
 
 #image {
     width: 400px;
     height: 300px;
-    border-radius: 30px;
-}
-
-#description {
-    color: wheat;
-}
-
-#comment {
-    width: 300px;
-    color: aliceblue;
-}
-
-#userPic {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-
-#name {
-    color: wheat;
 }
 
 .profile {
@@ -77,4 +50,40 @@ body {
     width: 400px;
     height: 70px;
     border-radius: 30px;
+}
+
+.user {
+    display: flex;
+    width: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#userPic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+#comment {
+    display: flex;
+    color: aliceblue;
+    justify-content: center;
+}
+
+#commentInput {
+    outline: none;
+    border: 1px solid;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px ;
+    background-color: rgba(0, 0, 0, 0);
+    background-color: white;
+    width: 300px;
+}
+
+#commentButton{
+    border: 1px solid;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }

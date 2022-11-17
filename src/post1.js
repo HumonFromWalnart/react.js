@@ -3,12 +3,16 @@ import React, { useState } from "react";
 import './axios.css'
 import './card.css'
 import { useContext, useEffect } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { ChangeTheme } from "./themeChangerButton";
+import { ThemeContext } from './context';
 import { instance } from "./axiosSrc";
+import { CommentButton } from "./commentButton";
 
 const Post1 = () => {
 
     const [subData, updateSubData] = useState({});
+    const { nig, switchinTime } = useContext(ThemeContext);
 
     const { id } = useParams();
 
@@ -28,31 +32,29 @@ const Post1 = () => {
         navigate('/')
     }
 
-
     return (
-        <div>
-            {
+        <div className={`container ${nig && 'dark'}`}>
+            <button onClick={toHome} style={{ color: 'black' }}>GO TO YOUR HOME</button>
+            <ChangeTheme onClick={switchinTime} />
+            <div className="post">
                 <div id='cardContainer'>
-                    <button onClick={toHome} style={{ color: 'black' }}>GO TO YOUR HOME</button>
-                    <img id="image" src={subData.image} />
-                    <div id="description">{subData.text}</div>
-                    <div className='profile'>
+                    <div id="profile">
                         <div className="user">
                             {
                                 subData.owner && <img id="userPic" src={subData.owner.picture} />
                             }
                             {
-                                subData.owner && <div id="commentContainer">
-                                    <div id="userName" >{subData.owner.firstName}</div>
-                                </div>
+                                subData.owner && <div id="userName" >{subData.owner.firstName}</div>
                             }
-
                         </div>
-
                     </div>
-
+                    <div id="description">{subData.text}</div>
+                    <img id="image" src={subData.image} />
+                    <div id="comment">
+                        <CommentButton />
+                    </div>
                 </div>
-            }
+            </div>
         </div>
 
     )
