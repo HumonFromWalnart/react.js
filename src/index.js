@@ -4,7 +4,7 @@ import './App.css';
 import AppSecond from './axiosTest.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Theme from './context';
-import { CardBOI } from './card';
+import { CardBOI } from './card.js';
 import Post1 from './post1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

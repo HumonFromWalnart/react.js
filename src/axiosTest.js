@@ -14,7 +14,6 @@ function AppSecond({ children }) {
     const getData = async () => {
       const res = await instance.get(`post${limit}`)
       setData(res.data.data)
-
       console.log(res.data.data)
       const com = await instance.get(`comment${limit}`)
       setData2(com.data.data)

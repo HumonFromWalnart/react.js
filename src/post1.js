@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ChangeTheme } from "./themeChangerButton";
 import { ThemeContext } from './context';
 import { instance } from "./axiosSrc";
-import { CommentButton } from "./commentButton";
+import { Comment } from "./comment";
 
 const Post1 = () => {
 
@@ -51,7 +51,7 @@ const Post1 = () => {
                     <div id="description">{subData.text}</div>
                     <img id="image" src={subData.image} />
                     <div id="comment">
-                        <CommentButton />
+                        <Comment/>
                     </div>
                 </div>
             </div>
