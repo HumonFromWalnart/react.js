@@ -6,11 +6,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Theme from './context';
 import { CardBOI } from './card.js';
 import Post1 from './post1';
+import LowBudgetCode from './TF';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <LowBudgetCode />
+    {/* <BrowserRouter>
       <Theme>
         <AppSecond>
           <Routes>
@@ -19,7 +21,7 @@ root.render(
           </Routes>
         </AppSecond>
       </Theme>
-    </BrowserRouter>
+    </BrowserRouter> */}
   </React.StrictMode>
 );
 
