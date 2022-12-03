@@ -1,44 +1,16 @@
-body {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(core.jpg);
-    background-size: 2050px 1080px;
-}
-
 .container {
     display: flex;
-    width: 700px;
-    border: 2px solid black;
+    flex-direction: row;
+    background-color: black;
+    justify-content: flex-start;
 }
 
 #numberInput {
-    width: 200px;
-    height: 140px;
     border: none;
     outline: none;
-    border: 1px solid rgb(28, 23, 23);
-    font-size: 60px;
-    background-color: azura;
-}
-
-#start {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: azure;
-    width: 200px;
-    border: 1px solid rgb(28, 23, 23);
-}
-
-#reset{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-shadow: 0 0  10px rgb(255, 255, 255);
+    font-size: 40px;
+    width: 50px;
     background-color: black;
-    width: 200px;
-    height: 100px;
-    background-color: aliceblue;
+    color: white;
 }

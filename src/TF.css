@@ -3,7 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    height: 1200px;
+    background-color: black;
 }
 
 .theSmallerBigBoi {
@@ -26,4 +27,8 @@
 
 #answer {
     border: 1px solid black;
+}
+
+*{
+    color: white;
 }

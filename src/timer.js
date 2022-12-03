@@ -2,54 +2,51 @@
 import './timer.css';
 import React, { useState, useEffect, useRef } from 'react';
 
-const App = () => {
-    const [value, setValue] = useState(0);
+const Timer = () => {
+    const [millsecond, setMillsecond] = useState(0);
+    const [second, setSecond] = useState(0);
     const [change, setChange] = useState('no');
-    const seconds = useRef(0);
-    // const [second, setSecond] = useState(0);
 
     useEffect(() => {
-        if (change === 'yes')
-            setTimeout(() => {
-                setValue(value + 1)
-                if (value === 100) {
-                    seconds.current.value += Number(value / 100);
-                    setValue(0)
-                }
-            }, 10);
-    }, [value, change]);
+        // if (change === 'yes'){
+        setTimeout(() => {
+            setSecond(second + 1)
+        }, 1000);
 
-    const reset = () => {
-        if (change === 'yes')
-            console.log("erase da memory")
-        else { console.log("nope") }
-    }
+        // }
+    }, [millsecond, second]);
 
-    const Start = (begin) => {
-        return (
-            <button id='start' onClick={begin.onClick}>Start</button>
-        );
-    }
+    // const reset = () => {
+    //     if (change === 'yes'){
+    //     console.log('its runnnig stop it')
+    //     }
+    //     else { console.log("nope") }
+    // }
 
-    const ResetIt = (stop) => {
-        return (
-            <button id='reset' onClick={stop.onClick}>Reset</button>
-        );
-    }
+    // const Start = (begin) => {
+    //     return (
+    //         <button id='start' onClick={begin.onClick}>Start</button>
+    //     );
+    // }
+
+    // const ResetIt = (stop) => {
+    //     return (
+    //         <button id='reset' onClick={stop.onClick}>Reset</button>
+    //     );
+    // }
 
     return (
 
         <div className='container'>
-            <input id='numberInput' value={value}></input>
-            <input id='numberInput' ref={seconds}></input>
-            <Start onClick={() => { setChange('yes') }} />
-            <ResetIt onClick={reset} />
+            <input id='numberInput' value={second}></input>
+            {/* <Start onClick={() => { setChange('yes') }} />
+            <ResetIt onClick={reset} /> */}
         </div >
 
     );
 }
 
-export default App;
+export default Timer;
 
 
 

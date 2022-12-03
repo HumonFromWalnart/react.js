@@ -7,21 +7,26 @@ import Theme from './context';
 import { CardBOI } from './card.js';
 import Post1 from './post1';
 import LowBudgetCode from './TF';
+import { Flashbang } from './flashbang';
+import { Krinja } from './umerOtKrinja';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LowBudgetCode />
-    {/* <BrowserRouter>
-      <Theme>
-        <AppSecond>
+
+     <BrowserRouter>
+      {/* <Theme>
+        <AppSecond> */}
           <Routes>
-            <Route path='/' element={<CardBOI />} />
-            <Route path='post/:id' element={<Post1 />} />
+            {/* <Route path='/' element={<CardBOI />} />
+            <Route path='post/:id' element={<Post1 />} /> */}
+               <Route path='/' element={<LowBudgetCode />}/>
+               <Route path='/flashbang' element={<Flashbang />}/>
+               <Route path='/umerOtKrinja' element={<Krinja/>}/>
           </Routes>
-        </AppSecond>
-      </Theme>
-    </BrowserRouter> */}
+        {/* </AppSecond>
+      </Theme> * */}
+   </BrowserRouter> 
   </React.StrictMode>
 );
 

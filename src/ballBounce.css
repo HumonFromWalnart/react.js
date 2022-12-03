@@ -1,0 +1,53 @@
+#daBall {
+    width: 100px;
+    height: 100px;
+    background-size: 100px 100px;
+    /* border-radius: 50%; */
+    background-image: url('robloxJumping.png');
+    /* background-color: rgba(255, 255, 255, 0.534); */
+    position: absolute;
+    animation: bounce 1s linear infinite;
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-90px);
+    }
+
+    20% {
+        transform: translateY(-200px);
+    }
+
+    30% {
+        transform: translateY(-220px);
+    }
+
+    40% {
+        transform: translateY(-240px);
+    }
+
+    50% {
+        transform: translateY(-260px);
+    }
+
+    60% {
+        transform: translateY(-260px);
+    }
+
+    75% {
+        transform: translateY(-240px);
+    }
+
+    80% {
+        transform: translateY(-220px);
+    }
+
+    90% {
+        transform: translateY(-200px);
+    }
+
+    100% {
+        transform: translateY(-90px);
+    }
+}
