@@ -15,9 +15,14 @@
     text-align: center;
 }
 
-#Micheal {
+#pic {
     width: 500px;
-    height: 200px;
+    height: 400px;
+}
+
+.question{
+    display: flex;
+    flex-direction: column;
 }
 
 #answers {
@@ -27,8 +32,11 @@
 
 #answer {
     border: 1px solid black;
+    
 }
 
 *{
     color: white;
 }
+
+html, body {margin: 0; overflow: hidden}

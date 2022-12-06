@@ -1,17 +1,23 @@
 
 import './timer.css';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Timer = () => {
     const [millsecond, setMillsecond] = useState(0);
-    const [second, setSecond] = useState(0);
+    const [second, setSecond] = useState(10);
     const [change, setChange] = useState('no');
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         // if (change === 'yes'){
         setTimeout(() => {
-            setSecond(second + 1)
+            setSecond(second - 1)
         }, 1000);
+        if(second == 0){
+            navigate('/flashbang')
+         }
 
         // }
     }, [millsecond, second]);

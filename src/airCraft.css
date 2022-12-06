@@ -1,0 +1,14 @@
+#aircraft{
+    width: 200px;
+    height: 100px;
+    animation: diving 1s linear infinite;
+}
+
+@keyframes diving {
+    0%{
+        transform: translateX(-2000px);
+    }
+    100%{
+        transform: translateX(2000px);
+    }
+}

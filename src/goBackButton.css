@@ -1,0 +1,25 @@
+#goback{
+    color: black;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    font-size: 50px;
+    animation: fadeIn linear 0.5s;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.container{
+    background-color: rgba(113, 30, 30, 0);
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}

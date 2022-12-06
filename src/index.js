@@ -9,6 +9,7 @@ import Post1 from './post1';
 import LowBudgetCode from './TF';
 import { Flashbang } from './flashbang';
 import { Krinja } from './umerOtKrinja';
+import Overplayed from './overplayed';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,7 @@ root.render(
                <Route path='/' element={<LowBudgetCode />}/>
                <Route path='/flashbang' element={<Flashbang />}/>
                <Route path='/umerOtKrinja' element={<Krinja/>}/>
+               <Route path='/overplayed' element={<Overplayed/>}/>
           </Routes>
         {/* </AppSecond>
       </Theme> * */}
