@@ -39,4 +39,8 @@
     color: white;
 }
 
+#rickroll{
+    text-decoration: none;
+}
+
 html, body {margin: 0; overflow: hidden}

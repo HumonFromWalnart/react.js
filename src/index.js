@@ -6,10 +6,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Theme from './context';
 import { CardBOI } from './card.js';
 import Post1 from './post1';
-import LowBudgetCode from './TF';
-import { Flashbang } from './flashbang';
-import { Krinja } from './umerOtKrinja';
-import Overplayed from './overplayed';
+import LowBudgetCode from './questionSite/TF';
+import { Flashbang } from './questionSite/flashbang';
+import { Krinja } from './questionSite/umerOtKrinja';
+import Overplayed from './questionSite/overplayed';
+import FirstElectricGuitar from './questionSite/firstElectricGuitar';
+import HitsOf90s from './questionSite/90sHit';
+import VoiceActors from './questionSite/voiceActors';
+import { Rickroll } from './questionSite/rikcrollBoiii';
+import TheEnd from './questionSite/theEnd';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +30,11 @@ root.render(
                <Route path='/flashbang' element={<Flashbang />}/>
                <Route path='/umerOtKrinja' element={<Krinja/>}/>
                <Route path='/overplayed' element={<Overplayed/>}/>
+               <Route path='/firstElectricGuitar' element={<FirstElectricGuitar/>}/>
+               <Route path='/90sHit' element={<HitsOf90s/>}/>
+               <Route path='/voiceActors' element={<VoiceActors/>}/>
+               <Route path='/theEnd' element={<TheEnd/>}/>
+               <Route path='/rickcroll' element={<Rickroll/>}/>
           </Routes>
         {/* </AppSecond>
       </Theme> * */}

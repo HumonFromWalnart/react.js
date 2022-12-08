@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import Jackson from "./huh.png";
 import './TF.css'
 import { useNavigate } from "react-router-dom";
-import Timer from "./timer";
+import Timer from "../timer";
 import { BallBounce } from "./ballbounce";
+import LedZeppelin from '.src/images/stairwayToHeavenAlbumCover.png';
+import Nirvanna from '.src/images/smellsLikeTeenSpirit.png'
 import { AirCraft } from "./airCraft";
 
-const LowBudgetCode = () => {
+const Overplayed = () => {
     const [answer, setAnswer] = useState();
     const [isAnswer, showAnswer] = useState(0)
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ const LowBudgetCode = () => {
     useEffect(() => {
         if (answer) {
             showAnswer(1);
-            navigate('/overplayed')
+            navigate('/firstElectricGuitar')
         }
         else if (answer === false) {
             showAnswer(2)
@@ -31,29 +32,23 @@ const LowBudgetCode = () => {
 
     return (
         <div className="theBigBoi">
-
-            {/* 
-            {
-                isAnswer === 1 && <body>
-                    <Flashbang />
-                </body>
-            }
-
-            {
-                isAnswer === 2 && <body>  <Flashbang /></body>
-            } */}
-
             {
                 isAnswer === 0 && <div className="theSmallerBigBoi">
                     <AirCraft />
                     <BallBounce />
                     <Timer />
-                    <p id="question">Micheal's real race</p>
-                    <img id="pic" src={Jackson}></img>
+                    <p id="question">Which one has biggest selling album?</p>
                     <div id="answers">
-                        <div type={'text'} id='answer' onClick={(() => { setAnswer(true) })} >Black</div>
+                        <div className="question">
+                            <img id='pic' src={Nirvanna} />
+                            <div type={'text'} id='answer' onClick={(() => { setAnswer(false) })} >Nirvanna - Smells Like Teen Spirit</div>
+                        </div>
+                        <div className="question">
+                            <img id='pic' src={LedZeppelin} />
+                            <div type={'text'} id='answer' onClick={(() => { setAnswer(true) })} >Led Zeppelin - Stairway To Heaven</div>
+                        </div>
 
-                        <div type={'text'} id='answer' onClick={(() => { setAnswer(false) })} >White</div>
+
                     </div>
                 </div>
             }
@@ -61,4 +56,4 @@ const LowBudgetCode = () => {
         </div >
     );
 }
-export default LowBudgetCode;
+export default Overplayed;
