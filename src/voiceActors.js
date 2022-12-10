@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import React from "react";
 import './TF.css'
 import { useNavigate } from "react-router-dom";
-import Timer from "../timer";
+import Timer from "./timer";
 import { BallBounce } from "./ballbounce";
-import Coolio from '.src/images/gangstasParadise.png';
-import Nirvanna from '.src/images/smellsLikeTeenSpirit.png'
+import Will from './images/willFerrell.png';
+import Benedict from './images/benedictCumberbatch.png'
 import { AirCraft } from "./airCraft";
 
-const HitsOf90s = () => {
+const VoiceActors = () => {
     const [answer, setAnswer] = useState();
     const [isAnswer, showAnswer] = useState(0)
     const navigate = useNavigate();
@@ -21,10 +21,10 @@ const HitsOf90s = () => {
     useEffect(() => {
         if (answer) {
             showAnswer(1);
-            navigate('/voiceActors')
+            navigate('/theEnd')
         }
         else if (answer === false) {
-            showAnswer(2)
+            showAnswer(2);
             navigate('/flashbang')
         }
         return () => { clearTimeout(goBack) }
@@ -34,18 +34,18 @@ const HitsOf90s = () => {
         <div className="theBigBoi">
             {
                 isAnswer === 0 && <div className="theSmallerBigBoi">
-                    <AirCraft />
+                    <AirCraft/>
                     <BallBounce />
                     <Timer />
-                    <p id="question">Which one 90s biggest hit?</p>
+                    <p id="question">Which one is voice actor of Megamind?</p>
                     <div id="answers">
                         <div className="question">
-                            <img id='pic' src={Nirvanna} />
-                            <div type={'text'} id='answer' onClick={(() => { setAnswer(true) })} >Nirvanna - Smells Like Teen Spirit</div>
+                            <img id='pic' src={Will} />
+                            <div type={'text'} id='answer' onClick={(() => { setAnswer(true) })} >Will Ferrel</div>
                         </div>
                         <div className="question">
-                            <img id='pic' src={Coolio} />
-                            <div type={'text'} id='answer' onClick={(() => { setAnswer(false) })} >Coolio - Gangsta's Paraside</div>
+                            <img id='pic' src={Benedict} />
+                            <div type={'text'} id='answer' onClick={(() => { setAnswer(false) })} >Benedict Cumberbatch</div>
                         </div>
 
                     </div>
@@ -55,4 +55,4 @@ const HitsOf90s = () => {
         </div >
     );
 }
-export default HitsOf90s;
+export default VoiceActors;

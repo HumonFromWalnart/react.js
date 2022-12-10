@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import Jackson from ".src/images/huh.png";
 import './TF.css'
 import { useNavigate } from "react-router-dom";
-import Timer from "../timer";
+import Timer from "./timer";
 import { BallBounce } from "./ballbounce";
+import fryingPan from './images/fryingPan.png';
+import Hawaiian from './images/hawaiian-modified.png'
 import { AirCraft } from "./airCraft";
 
-const LowBudgetCode = () => {
+const FirstElectricGuitar = () => {
     const [answer, setAnswer] = useState();
     const [isAnswer, showAnswer] = useState(0)
     const navigate = useNavigate();
@@ -20,40 +21,33 @@ const LowBudgetCode = () => {
     useEffect(() => {
         if (answer) {
             showAnswer(1);
-            navigate('/overplayed')
+            navigate('/90sHit')
         }
         else if (answer === false) {
             showAnswer(2)
-            navigate('/flashbang')
+            navigate('/wrong')
         }
         return () => { clearTimeout(goBack) }
     }, [answer])
 
     return (
         <div className="theBigBoi">
-
-            {/* 
-            {
-                isAnswer === 1 && <body>
-                    <Flashbang />
-                </body>
-            }
-
-            {
-                isAnswer === 2 && <body>  <Flashbang /></body>
-            } */}
-
             {
                 isAnswer === 0 && <div className="theSmallerBigBoi">
-                    <AirCraft />
+                    <AirCraft/>
                     <BallBounce />
                     <Timer />
-                    <p id="question">Micheal's real race</p>
-                    <img id="pic" src={Jackson}></img>
+                    <p id="question">Which one is first ever electric guitar?</p>
                     <div id="answers">
-                        <div type={'text'} id='answer' onClick={(() => { setAnswer(true) })} >Black</div>
+                        <div className="question">
+                            <img id='pic' src={fryingPan} />
+                            <div type={'text'} id='answer' onClick={(() => { setAnswer(true) })} >Frying Pan</div>
+                        </div>
+                        <div className="question">
+                            <img id='pic' src={Hawaiian} />
+                            <div type={'text'} id='answer' onClick={(() => { setAnswer(false) })} >Hawaiian</div>
+                        </div>
 
-                        <div type={'text'} id='answer' onClick={(() => { setAnswer(false) })} >White</div>
                     </div>
                 </div>
             }
@@ -61,4 +55,4 @@ const LowBudgetCode = () => {
         </div >
     );
 }
-export default LowBudgetCode;
+export default FirstElectricGuitar;

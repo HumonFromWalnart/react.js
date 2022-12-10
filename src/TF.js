@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import React from "react";
+import Jackson from "./images/huh.png";
 import './TF.css'
 import { useNavigate } from "react-router-dom";
-import Timer from "../timer";
+import Timer from "./timer";
 import { BallBounce } from "./ballbounce";
-import fryingPan from '.src/images/fryingPan.png';
-import Hawaiian from '.src/images/hawaiian-modified.png'
 import { AirCraft } from "./airCraft";
 
-const FirstElectricGuitar = () => {
+const LowBudgetCode = () => {
     const [answer, setAnswer] = useState();
     const [isAnswer, showAnswer] = useState(0)
     const navigate = useNavigate();
@@ -21,33 +20,40 @@ const FirstElectricGuitar = () => {
     useEffect(() => {
         if (answer) {
             showAnswer(1);
-            navigate('/90sHit')
+            navigate('/overplayed')
         }
         else if (answer === false) {
             showAnswer(2)
-            navigate('/flashbang')
+            navigate('/wrong')
         }
         return () => { clearTimeout(goBack) }
     }, [answer])
 
     return (
         <div className="theBigBoi">
+
+            {/* 
+            {
+                isAnswer === 1 && <body>
+                    <Flashbang />
+                </body>
+            }
+
+            {
+                isAnswer === 2 && <body>  <Flashbang /></body>
+            } */}
+
             {
                 isAnswer === 0 && <div className="theSmallerBigBoi">
-                    <AirCraft/>
+                    <AirCraft />
                     <BallBounce />
                     <Timer />
-                    <p id="question">Which one is first ever electric guitar?</p>
+                    <p id="question">Micheal's real race</p>
+                    <img id="pic" src={Jackson}></img>
                     <div id="answers">
-                        <div className="question">
-                            <img id='pic' src={fryingPan} />
-                            <div type={'text'} id='answer' onClick={(() => { setAnswer(true) })} >Frying Pan</div>
-                        </div>
-                        <div className="question">
-                            <img id='pic' src={Hawaiian} />
-                            <div type={'text'} id='answer' onClick={(() => { setAnswer(false) })} >Hawaiian</div>
-                        </div>
+                        <div type={'text'} id='answer' onClick={(() => { setAnswer(true) })} >Black</div>
 
+                        <div type={'text'} id='answer' onClick={(() => { setAnswer(false) })} >White</div>
                     </div>
                 </div>
             }
@@ -55,4 +61,4 @@ const FirstElectricGuitar = () => {
         </div >
     );
 }
-export default FirstElectricGuitar;
+export default LowBudgetCode;

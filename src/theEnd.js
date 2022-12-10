@@ -22,7 +22,7 @@ const TheEnd = () => {
         }
         else if (answer === false) {
             showAnswer(2)
-            navigate('/flashbang')
+            navigate('/wrong')
         }
         return () => { clearTimeout(goBack) }
     }, [answer])

@@ -6,15 +6,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Theme from './context';
 import { CardBOI } from './card.js';
 import Post1 from './post1';
-import LowBudgetCode from './questionSite/TF';
-import { Flashbang } from './questionSite/flashbang';
-import { Krinja } from './questionSite/umerOtKrinja';
-import Overplayed from './questionSite/overplayed';
-import FirstElectricGuitar from './questionSite/firstElectricGuitar';
-import HitsOf90s from './questionSite/90sHit';
-import VoiceActors from './questionSite/voiceActors';
-import { Rickroll } from './questionSite/rikcrollBoiii';
-import TheEnd from './questionSite/theEnd';
+import LowBudgetCode from './TF';
+import { Flashbang } from './flashbang';
+import { Krinja } from './umerOtKrinja';
+import Overplayed from './overplayed';
+import FirstElectricGuitar from './firstElectricGuitar';
+import HitsOf90s from './90sHit';
+import VoiceActors from './voiceActors';
+import { Rickroll } from './rikcrollBoiii';
+import TheEnd from './theEnd';
+import { Wrong } from './wrong';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +29,7 @@ root.render(
             <Route path='post/:id' element={<Post1 />} /> */}
                <Route path='/' element={<LowBudgetCode />}/>
                <Route path='/flashbang' element={<Flashbang />}/>
+               <Route path='/:id' element={<Wrong />}/>
                <Route path='/umerOtKrinja' element={<Krinja/>}/>
                <Route path='/overplayed' element={<Overplayed/>}/>
                <Route path='/firstElectricGuitar' element={<FirstElectricGuitar/>}/>

@@ -23,6 +23,7 @@
 .question{
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 #answers {
@@ -32,15 +33,16 @@
 
 #answer {
     border: 1px solid black;
-    
-}
-
-*{
-    color: white;
 }
 
 #rickroll{
     text-decoration: none;
+}
+
+
+
+*{
+    color: white;
 }
 
 html, body {margin: 0; overflow: hidden}

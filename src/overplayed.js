@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import React from "react";
 import './TF.css'
 import { useNavigate } from "react-router-dom";
-import Timer from "../timer";
+import Timer from "./timer";
 import { BallBounce } from "./ballbounce";
-import LedZeppelin from '.src/images/stairwayToHeavenAlbumCover.png';
-import Nirvanna from '.src/images/smellsLikeTeenSpirit.png'
+import LedZeppelin from './images/stairwayToHeavenAlbumCover.png';
+import Nirvanna from './images/smellsLikeTeenSpirit.png'
 import { AirCraft } from "./airCraft";
 
 const Overplayed = () => {
@@ -25,7 +25,7 @@ const Overplayed = () => {
         }
         else if (answer === false) {
             showAnswer(2)
-            navigate('/flashbang')
+            navigate('/wrong')
         }
         return () => { clearTimeout(goBack) }
     }, [answer])
