@@ -16,6 +16,7 @@ import VoiceActors from './voiceActors';
 import { Rickroll } from './rikcrollBoiii';
 import TheEnd from './theEnd';
 import { Wrong } from './wrong';
+import { Audio } from './audio';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,7 +28,8 @@ root.render(
           <Routes>
             {/* <Route path='/' element={<CardBOI />} />
             <Route path='post/:id' element={<Post1 />} /> */}
-               <Route path='/' element={<LowBudgetCode />}/>
+                <Route path='/' element={<Audio />}/>
+               {/* <Route path='/' element={<LowBudgetCode />}/>
                <Route path='/flashbang' element={<Flashbang />}/>
                <Route path='/:id' element={<Wrong />}/>
                <Route path='/umerOtKrinja' element={<Krinja/>}/>
@@ -36,7 +38,7 @@ root.render(
                <Route path='/90sHit' element={<HitsOf90s/>}/>
                <Route path='/voiceActors' element={<VoiceActors/>}/>
                <Route path='/theEnd' element={<TheEnd/>}/>
-               <Route path='/rickcroll' element={<Rickroll/>}/>
+               <Route path='/rickcroll' element={<Rickroll/>}/> */}
           </Routes>
         {/* </AppSecond>
       </Theme> * */}

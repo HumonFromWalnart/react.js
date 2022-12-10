@@ -49,7 +49,7 @@ const LowBudgetCode = () => {
                     <BallBounce />
                     <Timer />
                     <p id="question">Micheal's real race</p>
-                    <img id="pic" src={Jackson}></img>
+                    <img id="pic" src={Jackson} ></img>
                     <div id="answers">
                         <div type={'text'} id='answer' onClick={(() => { setAnswer(true) })} >Black</div>
 
@@ -61,4 +61,5 @@ const LowBudgetCode = () => {
         </div >
     );
 }
+
 export default LowBudgetCode;
